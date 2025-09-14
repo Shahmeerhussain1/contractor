@@ -34,7 +34,7 @@ const Projects = () => {
     },
     {
       title: "Canal Lining Project - Punjab",
-      category: "Water Conservation",
+      category: "Water ",
       description: "Extensive canal lining project covering 75km of irrigation canals to reduce water losses and improve irrigation efficiency.",
       status: "In Progress",
       year: "2024",

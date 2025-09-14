@@ -20,8 +20,10 @@ const Header = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex items-center space-x-4">
-                        <div className="bg-blue-600 text-white p-2 rounded-full">
-                            <span className="font-bold text-xl">H&C</span>
+                        <div className=" text-white rounded-full">
+                            {/* <span className="font-bold text-xl">H&C</span> */}
+                            <img className='md:w-18 w-14' src='./logo.jpeg' />
+
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-900">M/S HBAS & CO</h1>
