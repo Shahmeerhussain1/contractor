@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Menu, X, CheckCircle, Award, Users, Calendar } from 'lucide-react';
-
 import bgImage from "../assets/TIP_03.jpg";
+
 const Projects = () => {
   const projects = [
     {
@@ -34,7 +34,7 @@ const Projects = () => {
     },
     {
       title: "Canal Lining Project - Punjab",
-      category: "Water ",
+      category: "Water",
       description: "Extensive canal lining project covering 75km of irrigation canals to reduce water losses and improve irrigation efficiency.",
       status: "In Progress",
       year: "2024",
@@ -61,14 +61,40 @@ const Projects = () => {
     }
   ];
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <div className="pb-16 bg-white">
-      <div style={{ backgroundImage: `url(${bgImage})` }} className='relative bg-cover bg-center w-full py-40 mb-20'>
+      <div style={{ backgroundImage: `url(${bgImage})` }} className="relative bg-cover bg-center w-full py-40 mb-20">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 relative">
-            <h1 className="relative text-4xl md:text-5xl font-bold text-white mb-6">Our Projects</h1>
-            <p className="text-xl text-white max-w-3xl mx-auto">
+          <div className="text-center mb-16 relative animate-on-scroll animate-fade-in-up">
+            <h1 className="relative text-4xl md:text-5xl font-bold text-white mb-6 transform transition-transform duration-500 hover:scale-105">
+              Our Projects
+            </h1>
+            <p className="text-xl text-white max-w-3xl mx-auto animate-on-scroll animate-fade-in delay-200">
               Showcasing our expertise through successful completion of diverse civil construction and infrastructure projects across Pakistan.
             </p>
           </div>
@@ -77,53 +103,74 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Project Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-          <div className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg">
-            <div className="text-3xl font-bold text-white mb-2">100+</div>
-            <div className="text-white">Projects Completed</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg">
-            <div className="text-3xl font-bold text-white mb-2">30+</div>
-            <div className="text-white">Years Experience</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg">
-            <div className="text-3xl font-bold text-white mb-2">50+</div>
-            <div className="text-white">Government Projects</div>
-          </div>
-          <div className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg">
-            <div className="text-3xl font-bold text-white mb-2">95%</div>
-            <div className="text-white">Client Satisfaction</div>
-          </div>
+          {[
+            { value: "100+", label: "Projects Completed" },
+            { value: "30+", label: "Years Experience" },
+            { value: "50+", label: "Government Projects" },
+            { value: "95%", label: "Client Satisfaction" }
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-6 rounded-lg transform hover:scale-105 duration-300 animate-on-scroll animate-slide-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-white">{stat.label}</div>
+            </div>
+          ))}
         </div>
 
-        {/* Projects Grid  OFFICIAL*/}
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div
+              key={index}
+              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow transform hover:scale-105 duration-300 animate-on-scroll animate-slide-up"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover animate-on-scroll animate-fade-in"
+              />
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium animate-on-scroll animate-fade-in delay-100">
                     {project.category}
                   </span>
                   <div className="flex items-center space-x-2">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${project.status === 'Completed'
-                        ? 'bg-green-100 text-green-800'
-                        : 'bg-yellow-100 text-yellow-800'
-                      }`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-medium ${project.status === "Completed"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-yellow-100 text-yellow-800"
+                        } animate-on-scroll animate-fade-in delay-200`}
+                    >
                       {project.status}
                     </span>
-                    <span className="text-gray-500 text-sm">{project.year}</span>
+                    <span className="text-gray-500 text-sm animate-on-scroll animate-fade-in delay-300">
+                      {project.year}
+                    </span>
                   </div>
                 </div>
-
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed">{project.description}</p>
-
+                <h3 className="text-xl font-bold text-gray-900 mb-3 transform transition-transform duration-500 hover:scale-105">
+                  {project.title}
+                </h3>
+                <p className="text-gray-700 mb-6 leading-relaxed animate-on-scroll animate-fade-in delay-100">
+                  {project.description}
+                </p>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-3">Project Highlights:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {project.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="text-green-600 flex-shrink-0" size={14} />
+                      <div
+                        key={featureIndex}
+                        className="flex items-center space-x-2 animate-on-scroll animate-slide-up"
+                        style={{ animationDelay: `${(featureIndex + 1) * 50}ms` }}
+                      >
+                        <CheckCircle
+                          className="text-green-600 flex-shrink-0 transform transition-transform duration-300 hover:scale-110"
+                          size={14}
+                        />
                         <span className="text-gray-700 text-sm">{feature}</span>
                       </div>
                     ))}
@@ -132,116 +179,19 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div> */}
-
-        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all"
-            >
-              <div className="grid md:grid-cols-2">
-               
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-
-               
-                <div className="p-8 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Highlights:</h4>
-                    <ul className="space-y-1">
-                      {project.features.map((f, i) => (
-                        <li key={i} className="flex items-center text-sm text-gray-700">
-                          <CheckCircle size={14} className="text-green-600 mr-2" />
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-  {projects.map((project, index) => (
-    <div
-      key={index}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-    >
-      {/* Project Image */}
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-48 object-cover"
-      />
-
-      {/* Project Content */}
-      <div className="p-8">
-        <div className="flex items-center justify-between mb-4">
-          <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-            {project.category}
-          </span>
-          <div className="flex items-center space-x-2">
-            <span
-              className={`px-3 py-1 rounded-full text-sm font-medium ${
-                project.status === "Completed"
-                  ? "bg-green-100 text-green-800"
-                  : "bg-yellow-100 text-yellow-800"
-              }`}
-            >
-              {project.status}
-            </span>
-            <span className="text-gray-500 text-sm">{project.year}</span>
-          </div>
         </div>
-
-        <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-        <p className="text-gray-700 mb-6 leading-relaxed">
-          {project.description}
-        </p>
-
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-3">Project Highlights:</h4>
-          <div className="grid grid-cols-2 gap-2">
-            {project.features.map((feature, featureIndex) => (
-              <div
-                key={featureIndex}
-                className="flex items-center space-x-2"
-              >
-                <CheckCircle
-                  className="text-green-600 flex-shrink-0"
-                  size={14}
-                />
-                <span className="text-gray-700 text-sm">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-
 
         {/* Contact CTA */}
-        <div className="mt-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Have a Project in Mind?</h2>
-          <p className="text-xl text-gray-600 mb-8">
+        <div className="mt-16 text-center animate-on-scroll animate-fade-in">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 transform transition-transform duration-500 hover:scale-105">
+            Have a Project in Mind?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 animate-on-scroll animate-fade-in delay-200">
             Let's discuss how we can bring your construction project to life with our expertise and experience.
           </p>
           <Link
             to="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block transform hover:scale-105 duration-300"
           >
             Start Your Project
           </Link>
@@ -251,5 +201,4 @@ const Projects = () => {
   );
 };
 
-
-export default Projects
+export default Projects;
