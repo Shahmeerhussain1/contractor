@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Menu, X, CheckCircle, Award, Users, Calendar } from 'lucide-react';
-
+import bgImage from "../assets/TIP_02.png";
 const Services = () => {
   const services = [
     {
@@ -37,21 +37,25 @@ const Services = () => {
   ];
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive civil construction and infrastructure development services tailored to meet the diverse needs of our clients.
-          </p>
+    <div className="pb-16 bg-white">
+      <div style={{ backgroundImage: `url(${bgImage})` }} className='relative bg-cover bg-center w-full py-40 mb-20'>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 relative">
+            <h1 className="relative text-4xl md:text-5xl font-bold text-white mb-6">Our Services</h1>
+            <p className="text-xl text-white max-w-3xl mx-auto">
+              Comprehensive civil construction and infrastructure development services tailored to meet the diverse needs of our clients.
+            </p>
+          </div>
         </div>
-
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
               <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
-              
+
               <div className="space-y-2">
                 <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
                 <ul className="space-y-2">

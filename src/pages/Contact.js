@@ -1,19 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Menu, X, CheckCircle, Award, Users, Calendar } from 'lucide-react';
+import bgImage from "../assets/TIP_04.png";
 
 // Contact Page
 const Contact = () => {
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to start your construction project? Get in touch with our team of experts for professional consultation and project planning.
-          </p>
+    <div className="pb-16 bg-white">
+          <div style={{ backgroundImage: `url(${bgImage})` }} className='relative bg-cover bg-center w-full py-40 mb-20'>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 relative">
+            <h1 className="relative text-4xl md:text-5xl font-bold text-white mb-6">Contact Us</h1>
+            <p className="text-xl text-white max-w-3xl mx-auto">
+              Ready to start your construction project? Get in touch with our team of experts for professional consultation and project planning.
+            </p>
+          </div>
         </div>
-
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
@@ -22,8 +27,8 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Phone */}
               <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-full">
-                  <Phone className="text-blue-600" size={24} />
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-full">
+                  <Phone className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone Numbers</h3>
@@ -35,8 +40,8 @@ const Contact = () => {
 
               {/* Email */}
               <div className="flex items-start space-x-4">
-                <div className="bg-green-100 p-3 rounded-full">
-                  <Mail className="text-green-600" size={24} />
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-full">
+                  <Mail className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Address</h3>
@@ -47,8 +52,8 @@ const Contact = () => {
 
               {/* Address */}
               <div className="flex items-start space-x-4">
-                <div className="bg-purple-100 p-3 rounded-full">
-                  <MapPin className="text-purple-600" size={24} />
+                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-full">
+                  <MapPin className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Office Address</h3>
@@ -215,7 +220,7 @@ const Contact = () => {
           </div>
           
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <Users className="text-green-600 mx-auto mb-4" size={48} />
+            <Users className="text-blue-600 mx-auto mb-4" size={48} />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Expert Team</h3>
             <p className="text-gray-600 text-sm">
               Professional engineers and construction experts with decades of combined experience
@@ -223,7 +228,7 @@ const Contact = () => {
           </div>
           
           <div className="text-center bg-gray-50 p-6 rounded-lg">
-            <CheckCircle className="text-purple-600 mx-auto mb-4" size={48} />
+            <CheckCircle className="text-blue-600 mx-auto mb-4" size={48} />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality Assurance</h3>
             <p className="text-gray-600 text-sm">
               Committed to delivering projects with highest quality standards and timely completion
