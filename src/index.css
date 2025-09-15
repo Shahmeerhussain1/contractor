@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up { transform: translateY(30px); }
+.fade-left { transform: translateX(-30px); }
+.fade-in { opacity: 0; }
+.zoom-in { transform: scale(0.9); }
+
+.fade-up.in-view,
+.fade-left.in-view,
+.fade-in.in-view,
+.zoom-in.in-view {
+  transform: none;
+  opacity: 1;
+}
+
+
