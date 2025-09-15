@@ -286,9 +286,11 @@ import {
 const bgImage =
   "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2070&q=80";
 const bgImage1 =
-  "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=80";
+  "./1.png";
 const bgImage2 =
-   "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=80";
+  "./3.png";
+const bgImage4 =
+  "./2.jpg";
 const bgImage3 =
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80";
 
@@ -337,12 +339,20 @@ const Home = () => {
             management, and large-scale infrastructure projects across Pakistan.
           </p>
           <div className="animate-on-scroll zoom-in flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
+            <a
+              href="/projects"
+              className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+            >
               View Our Projects
-            </button>
-            <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+            </a>
+
+            <a
+              href="/contact"
+              className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+            >
               Get Quote
-            </button>
+            </a>
+
           </div>
         </div>
       </section>
@@ -426,9 +436,11 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-0 p-6 text-white">
                   <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition">
+                  <a
+                    href="/services"
+                    className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition">
                     Learn More →
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -452,21 +464,25 @@ const Home = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {[bgImage1, bgImage2, bgImage3].map((img, i) => (
+            {[
+              { img: bgImage2, title: "Major Irrigation Canal System" , desc : "Comprehensive urban infrastructure project including road construction, drainage systems, and utility installations across multiple sectors."},
+              { img: bgImage1, title: "Canal Lining Project" , desc : "Extensive canal lining project covering 75km of irrigation canals to reduce water losses and improve irrigation efficiency."},
+              { img: bgImage4, title: "Bridge Construction" , desc : "Construction of reinforced concrete bridge spanning 200 meters over major river, connecting rural communities to urban centers."},
+            ].map((img, i) => (
               <div
                 key={i}
                 className="animate-on-scroll fade-up rounded-lg overflow-hidden shadow-lg"
               >
                 <div
                   className="h-56 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${img})` }}
+                  style={{ backgroundImage: `url(${img.img})` }}
                 />
                 <div className="p-4 bg-white">
                   <h4 className="font-semibold text-gray-900">
-                    Project Title {i + 1}
+                    {img.title}
                   </h4>
                   <p className="text-sm text-gray-600 mt-1">
-                    Short description of the project's scope and impact.
+                   {img.desc}
                   </p>
                 </div>
               </div>
@@ -641,4 +657,3 @@ const Home = () => {
 export default Home;
 
 
-                

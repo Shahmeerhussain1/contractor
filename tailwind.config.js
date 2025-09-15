@@ -8,6 +8,7 @@ module.exports = {
        fontFamily: {
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        interTight: ["Inter Tight", "sans-serif"],
       },
      animation: {
         'fade-in': 'fadeIn 1s ease-out',
