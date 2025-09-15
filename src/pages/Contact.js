@@ -332,7 +332,7 @@ const Contact = () => {
                 className="flex items-start space-x-4 animate-on-scroll fade-up"
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-full">
+                <div className="bg-gray-900 p-3 rounded-full">
                   {contact.icon}
                 </div>
                 <div>
@@ -352,14 +352,14 @@ const Contact = () => {
 
           {/* CEO Contact */}
           <div className="mt-12 bg-gray-50 p-6 rounded-lg flex items-center space-x-4 animate-on-scroll zoom-in delay-400">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+            <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold">
               FA
             </div>
             <div>
               <h4 className="text-lg font-semibold text-gray-900">
                 Furqan Ali Soomro
               </h4>
-              <p className="text-blue-600">Managing Director & CEO</p>
+              <p className="text-gray-900">Managing Director & CEO</p>
               <p className="text-sm text-gray-500">
                 Available for major project discussions
               </p>
@@ -412,7 +412,7 @@ const Contact = () => {
               placeholder="Describe your project requirements..."
               className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
             ></textarea>
-            <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition">
+            <button className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-50 hover:text-gray-900 transition">
               Send Message
             </button>
           </form>

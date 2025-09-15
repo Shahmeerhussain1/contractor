@@ -284,22 +284,22 @@ const Services = () => {
 
         {/* Stats Section */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="bg-blue-600 text-white p-10 rounded-lg animate-on-scroll zoom-in">
+          <div className="bg-gray-900 text-white p-10 rounded-lg animate-on-scroll zoom-in">
             <h3 className="text-4xl font-bold">25+</h3>
             <p className="mt-2">Years of Experience</p>
           </div>
-          <div className="bg-gray-100 p-10 rounded-lg animate-on-scroll zoom-in delay-200">
-            <h3 className="text-4xl font-bold text-blue-600">100+</h3>
+          <div className="bg-gray-900 p-10 text-white rounded-lg animate-on-scroll zoom-in delay-200">
+            <h3 className="text-4xl font-bold text-white">100+</h3>
             <p className="mt-2">Completed Projects</p>
           </div>
-          <div className="bg-blue-50 p-10 rounded-lg animate-on-scroll zoom-in delay-400">
-            <h3 className="text-4xl font-bold text-blue-600">50+</h3>
+          <div className="bg-gray-900 text-white p-10 rounded-lg animate-on-scroll zoom-in delay-400">
+            <h3 className="text-4xl font-bold ">50+</h3>
             <p className="mt-2">Happy Clients</p>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-20 bg-blue-600 text-white p-12 rounded-xl text-center animate-on-scroll fade-up">
+        <div className="mt-20 bg-gray-900 text-white p-12 rounded-xl text-center animate-on-scroll fade-up">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Project?
           </h2>

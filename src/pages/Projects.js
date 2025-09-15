@@ -146,7 +146,7 @@ const Projects = () => {
           ].map((stat, i) => (
             <div
               key={i}
-              className="text-center bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-lg text-white animate-on-scroll zoom-in"
+              className="text-center bg-gray-900 p-8 rounded-lg text-white animate-on-scroll zoom-in"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="text-3xl font-bold mb-2">{stat.value}</div>
@@ -225,7 +225,7 @@ const Projects = () => {
           </p>
           <Link
             to="/contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-gray-900 transition"
           >
             Start Your Project
           </Link>

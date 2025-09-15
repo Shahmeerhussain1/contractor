@@ -328,7 +328,7 @@ const Home = () => {
           style={{ backgroundImage: `url(${bgImage})`, opacity: 0.16 }}
         />
         <div className="relative z-10 max-w-4xl px-6">
-          <h1 className="animate-on-scroll fade-up text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="animate-on-scroll fade-up text-4xl md:text-8xl font-bold text-gray-900 mb-4">
             M/S <span className="gradient-text">HBAS & CO</span>
           </h1>
           <p className="animate-on-scroll fade-up text-lg text-gray-700 mb-3">
@@ -341,14 +341,14 @@ const Home = () => {
           <div className="animate-on-scroll zoom-in flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/projects"
-              className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+              className="bg-gray-900 text-white border border-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 hover:text-gray-900 transition"
             >
               View Our Projects
             </a>
 
             <a
               href="/contact"
-              className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
+              className="border border-gray-900 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition"
             >
               Get Quote
             </a>
@@ -361,7 +361,7 @@ const Home = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="animate-on-scroll fade-up text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="animate-on-scroll fade-up text-3xl md:text-5xl font-bold text-gray-900 mb-3">
               Why Choose <span className="gradient-text">HBAS & CO</span>?
             </h2>
             <p className="animate-on-scroll fade-up text-gray-600 max-w-2xl mx-auto">
@@ -396,7 +396,7 @@ const Home = () => {
                 key={idx}
                 className="animate-on-scroll zoom-in bg-gray-50 p-6 rounded-lg shadow-sm text-center"
               >
-                <div className="w-14 h-14 mx-auto mb-3 bg-blue-600 text-white flex items-center justify-center rounded-full">
+                <div className="w-14 h-14 mx-auto mb-3 bg-gray-900 text-white flex items-center justify-center rounded-full">
                   <it.icon size={20} />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-1">{it.title}</h3>
@@ -411,7 +411,7 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="animate-on-scroll fade-up text-3xl font-bold text-gray-900">
+            <h2 className="animate-on-scroll fade-up text-3xl md:text-5xl font-bold text-gray-900">
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="animate-on-scroll fade-up text-gray-600 max-w-2xl mx-auto">
@@ -438,7 +438,7 @@ const Home = () => {
                   <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
                   <a
                     href="/services"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700 transition">
+                    className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-50 hover:text-gray-900 transition">
                     Learn More →
                   </a>
                 </div>
@@ -455,7 +455,7 @@ const Home = () => {
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
-            <h2 className="animate-on-scroll fade-up text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="animate-on-scroll fade-up text-3xl md:text-5xl font-bold text-gray-900">
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="animate-on-scroll fade-up text-gray-600 max-w-2xl mx-auto">
@@ -494,7 +494,7 @@ const Home = () => {
       {/* ========== TESTIMONIALS ========== */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h3 className="animate-on-scroll fade-up text-3xl font-bold text-gray-900">
+          <h3 className="animate-on-scroll fade-up text-3xl md:text-5xl font-bold text-gray-900">
             What Clients Say
           </h3>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
@@ -560,7 +560,7 @@ const Home = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
               Our <span className="gradient-text">Mission</span>
             </h3>
-            <div className="glass-effect p-4 rounded">
+            <div className="glass-effect py-4 rounded">
               <p className="text-gray-700">
                 Deliver sustainable and innovative engineering solutions in
                 irrigation, water management and infrastructure development.
@@ -579,7 +579,7 @@ const Home = () => {
                 ["Safety", "Top safety standards across operations."],
               ].map(([t, d], i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className="bg-blue-600 text-white p-2 rounded">
+                  <div className="bg-gray-900 text-white p-2 rounded">
                     <CheckCircle size={16} />
                   </div>
                   <div>
@@ -596,25 +596,25 @@ const Home = () => {
       {/* ========== LEADERSHIP ========== */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h3 className="animate-on-scroll fade-up text-3xl font-bold text-gray-900 text-center mb-8">
+          <h3 className="animate-on-scroll fade-up text-3xl md:text-5xl font-bold text-gray-900 text-center mb-8">
             <span className="gradient-text">Leadership</span>
           </h3>
-          <div className="animate-on-scroll zoom-in glass-effect p-6 rounded-lg shadow-sm grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div className="animate-on-scroll zoom-in glass-effect p-6 rounded-lg  grid grid-cols-1 md:grid-cols-3 gap-4 items-center py-4">
             <div className="flex justify-center">
               <img
-                src={ceoImage}
+                src={"https://i.pravatar.cc/300"}
                 alt="Furqan Ali Soomro - CEO"
-                className="w-36 h-36 object-cover rounded-full shadow"
+                className="w-56 h-56 object-cover  shadow"
               />
             </div>
             <div className="md:col-span-2">
-              <h4 className="text-xl font-bold text-gray-900">
+              <h4 className="text-4xl font-bold text-gray-900">
                 Furqan Ali Soomro
               </h4>
               <p className="text-blue-700 font-medium mb-3">
                 Managing Director & CEO
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-700 mt-6">
                 Leading HBAS & CO with vision and expertise, Furqan Ali Soomro
                 has expanded the company’s capabilities and delivered numerous
                 large-scale infrastructure projects while maintaining a
@@ -643,7 +643,7 @@ const Home = () => {
           <div className="animate-on-scroll zoom-in">
             <a
               href="#contact"
-              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition"
+              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-50 hover:text-gray-900 transition"
             >
               Contact Us
             </a>
