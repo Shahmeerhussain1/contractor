@@ -18,7 +18,7 @@ const Header = () => {
         <header className="bg-white shadow-lg sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center py-4">
-                    <div className="flex items-center space-x-4">
+                    <Link to="/" className="flex items-center space-x-4">
                         <div className=" text-white rounded-full">
                             {/* <span className="font-bold text-xl">H&C</span> */}
                             <img className='md:w-18 w-14' src='./logo.jpeg' />
@@ -28,7 +28,7 @@ const Header = () => {
                             <h1 className="text-xl font-bold text-gray-900">M/S HBAS & CO</h1>
                             <p className="text-sm text-gray-600">Civil Construction Contractor</p>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex space-x-8">
@@ -36,7 +36,7 @@ const Header = () => {
                             <Link
                                 key={item.name}
                                 to={item.path}
-                                className={`text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors ${location.pathname === item.path ? 'text-blue-600 border-b-2 border-blue-600' : ''
+                                className={`text-gray-700 hover:text-blue-600 px-3 py-2  text-sm font-medium transition-colors ${location.pathname === item.path ? 'text-blue-600 border-b-2 border-blue-600' : ''
                                     }`}
                             >
                                 {item.name}
